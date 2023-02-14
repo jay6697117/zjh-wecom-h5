@@ -1,49 +1,17 @@
-<!--
-一个可以递归渲染自己的嵌套树组件。
-你可以双击一个项目将其转变为一个文件夹。
--->
 
 <script setup name="About">
-import { ref } from 'vue'
-// import MyTree from '@/components/MyTree/index.vue'
-
-const treeData = ref({
-  name: 'My Tree',
-  children: [
-    { name: 'hello' },
-    { name: 'world' },
-    {
-      name: 'child folder',
-      children: [
-        {
-          name: 'child folder',
-          children: [{ name: 'hello' }, { name: 'world' }]
-        },
-        { name: 'hello' },
-        { name: 'world' },
-        {
-          name: 'child folder',
-          children: [{ name: 'hello' }, { name: 'world' }]
-        }
-      ]
-    }
-  ]
-})
+// import { ref } from 'vue'
 </script>
 
 <template>
-  <ul class="about">
-    <MyTree class="item" :model="treeData"></MyTree>
-  </ul>
+  <div class="about">
+    <count-comp />
+  </div>
 </template>
 
 <style lang="less" scoped>
 .about {
   padding: 8px;
-
-  .item {
-    cursor: pointer;
-    line-height: 1.5;
-  }
+  background-color: lightseagreen;
 }
 </style>

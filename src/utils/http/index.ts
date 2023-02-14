@@ -1,6 +1,6 @@
 import Axios, { type AxiosInstance, type AxiosError, type AxiosResponse, type AxiosRequestConfig } from 'axios'
 import { ContentTypeEnum, ResultEnum } from '@/enums/requestEnum'
-import NProgress from '../progress'
+import NProgress from '@/utils/progress'
 import { showFailToast } from 'vant'
 import 'vant/es/toast/style'
 

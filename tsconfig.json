@@ -3,7 +3,6 @@
   "include": ["env.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "types/*.d.ts", "vite.config.ts"],
   "exclude": ["node_modules", "dist", "**/*.js"],
   "compilerOptions": {
-    "strictPropertyInitialization":false,
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
