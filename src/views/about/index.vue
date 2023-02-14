@@ -1,4 +1,3 @@
-
 <script setup name="About">
 // import { ref } from 'vue'
 </script>
@@ -11,7 +10,10 @@
 
 <style lang="less" scoped>
 .about {
+  box-sizing: border-box;
   padding: 8px;
-  background-color: lightseagreen;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50px;
 }
 </style>
