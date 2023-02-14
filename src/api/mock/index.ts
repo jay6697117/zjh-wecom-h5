@@ -10,7 +10,7 @@ interface ListResult {
 
 export function getListApi(params?: object): Promise<ListResult> {
   return useHttpHook().request({
-    url: '/list/get',
+    url: '/mock-api/list/get',
     method: 'get',
     params
   })
@@ -18,7 +18,7 @@ export function getListApi(params?: object): Promise<ListResult> {
 
 export function getListApiError(data?: object): Promise<ListResult> {
   return useHttpHook().request({
-    url: '/list/error',
+    url: '/mock-api/list/error',
     method: 'post',
     data
   })

@@ -30,6 +30,9 @@ class Http {
         // if (token) {
         //   config.headers['token'] = token
         // }
+        if (config.url && /^\/mock-api/.test(config.url!)) {
+          config.baseURL = 'http://localhost:8000'
+        }
         return config
       },
       (error: AxiosError) => {

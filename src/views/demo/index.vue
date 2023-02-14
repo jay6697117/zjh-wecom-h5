@@ -40,12 +40,13 @@ const contentList = reactive([
 
 <style lang="less" scoped>
 .demo-content {
-  padding: 0 12px;
+  padding: 0 12px 10px;
+  background-color: rgba(0, 0, 255, 0.5);
 
   .logo {
     display: block;
     width: 120px;
-    margin: 30px auto 20px;
+    margin: 0 auto 20px;
   }
 
   &__title {

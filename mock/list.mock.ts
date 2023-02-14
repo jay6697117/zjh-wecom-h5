@@ -3,7 +3,7 @@ import Mock from 'mockjs'
 
 export default defineMock([
   {
-    url: '/dev-api/list/get',
+    url: '/mock-api/list/get',
     delay: 1000,
     body: {
       succeed: 1,
@@ -53,7 +53,7 @@ export default defineMock([
     }
   },
   {
-    url: '/dev-api/list/error',
+    url: '/mock-api/list/error',
     delay: 1000,
     body: {
       succeed: 0,

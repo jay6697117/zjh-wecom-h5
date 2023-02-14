@@ -31,6 +31,7 @@ module.exports = {
         ignores: ['index'] // 需要忽略的组件名
       }
     ],
+    "vue/no-v-model-argument": 'off',
     'vue/require-default-prop':'off',
     'vue/attributes-order':'off',
     'vue/no-multiple-template-root': 'off', //最好有root element

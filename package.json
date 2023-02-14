@@ -1,5 +1,5 @@
 {
-  "name": "vue3-h5-template",
+  "name": "wecom-h5",
   "version": "0.5.0",
   "license": "MIT",
   "engines": {
@@ -16,7 +16,7 @@
     "build-prod": "run-p type-check build:prod",
     "type-check": "vue-tsc --noEmit",
     "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
-    "lint:eslint": "eslint . --fix --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint:eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint": "run-s lint:prettier lint:eslint"
   },
   "dependencies": {

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import Tabbar from "@/components/Tabbar/index.vue"; //注释验证Tabbar是全局组件
 import { useCachedViewStoreHook } from '@/store/modules/cachedView'
 import { computed } from 'vue'
 const cachedViewList = computed(() => {
@@ -9,15 +8,14 @@ const cachedViewList = computed(() => {
 <template>
   <div class="app-wrapper">
     <div class="app-wrapper__content">
-      <!-- <div>{{ cachedViewList }}</div> -->
-      <router-view v-slot="{ Component, route }">
-        <div>fullPath:{{ route.fullPath }}</div>
+      <!-- <router-view v-slot="{ Component, route }"> -->
+      <router-view v-slot="{ Component }">
         <keep-alive :include="cachedViewList">
           <component :is="Component" />
         </keep-alive>
       </router-view>
     </div>
-    <div class="app-wrapper__footer">
+    <div class="app-wrapper__footer" v-if="true">
       <tabbar />
     </div>
   </div>
@@ -29,7 +27,27 @@ const cachedViewList = computed(() => {
 .app-wrapper {
   .clearfix();
   position: relative;
-  height: 100%;
   width: 100%;
+  height: 100%;
+
+  &__content {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__footer{
+    background-color: red;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
 }
 </style>

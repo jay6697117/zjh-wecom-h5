@@ -32,14 +32,14 @@ const handleSuccessReq = async (type: string) => {
     showSuccessToast('请求成功')
     showList.push(...(list as any[]))
   } catch (error) {
-    console.log('handleSuccessReq error', error)
+    console.log('handleSuccessReq error:', error)
   }
 }
 const handleErrorReq = () => {
   getListApiError().then(
     () => {},
-    err => {
-      console.log(err)
+    error => {
+      console.log('handleErrorReq error:', error)
       showFailToast('请求有误')
     }
   )

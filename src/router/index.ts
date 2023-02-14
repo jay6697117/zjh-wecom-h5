@@ -15,10 +15,8 @@ export interface toRouteType extends RouteLocationNormalized {
 }
 
 router.beforeEach((to: toRouteType, from, next) => {
-  console.log('to', to)
-  if (to.meta.title) {
-    document.title = to.meta.title
-  }
+  console.log('beforeEach to:', to)
+  document.title = (to?.meta?.title as string) || document.title
   // 路由缓存
   useCachedViewStoreHook().addCachedView(to)
   next()

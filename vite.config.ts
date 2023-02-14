@@ -72,6 +72,10 @@ export default defineConfig(({ mode }) => {
           target: 'https://api-lucky-drow-test.yestae.com',
           changeOrigin: true,
           rewrite: path => path.replace(/^\/dev-api/, '')
+        },
+        '^/mock-api': {
+          target: '',
+          changeOrigin: true,
         }
       }
     },
