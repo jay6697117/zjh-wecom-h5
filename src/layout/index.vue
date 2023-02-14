@@ -39,7 +39,7 @@ const cachedViewList = computed(() => {
     overflow-y: auto;
   }
 
-  &__footer{
+  &__footer {
     background-color: red;
     width: 100%;
     height: 50px;
