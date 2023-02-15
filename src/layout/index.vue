@@ -9,10 +9,14 @@ const onClickLeft = () => history.go(-1)
 
 <template>
   <div class="app-wrapper">
-    <div class="app-wrapper__header" v-if="$route.path !== '/home'">
-      <van-nav-bar :title="`${$route.meta?.title}`" left-arrow @click="onClickLeft" />
+    <div class="app-wrapper__header" v-if="!$route.meta?.noNav">
+      <van-nav-bar :title="`${$route.meta?.title}`">
+        <template #left>
+          <van-icon name="arrow-left" size="18" color="#888" @click="onClickLeft" />
+        </template>
+      </van-nav-bar>
     </div>
-    <div class="app-wrapper__content" :style="{ 'padding-top': $route.path !== '/home' ? '46px' : '' }">
+    <div class="app-wrapper__content" :style="{ 'padding-top': !$route.meta?.noNav ? '46px' : '' }">
       <router-view v-slot="{ Component }">
         <keep-alive :include="cachedViewList">
           <component :is="Component" />
@@ -27,8 +31,9 @@ const onClickLeft = () => history.go(-1)
 
 <style lang="less" scoped>
 @import '@/styles/mixin.less';
-::v-deep .van-nav-bar__left {
-  padding: 0 0 0 10px;
+:deep(.van-nav-bar__left) {
+  padding: 0 10px;
+  // background-color: red;
 }
 
 .app-wrapper {
