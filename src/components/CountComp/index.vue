@@ -21,6 +21,6 @@ const handleSub = () => {
 <style lang="less" scoped>
 .count-comp {
   padding: 10px;
-background-color: skyblue;
+  background-color: skyblue;
 }
 </style>

@@ -15,7 +15,9 @@ const showNotifyFn = () => {
   console.log('timeoutId', timeoutId)
 }
 
-async function foo() {
+// const onClickLeft = () => {}
+
+const foo = async () => {
   console.log('click run')
   showToast({
     message: '加载中...',
@@ -35,6 +37,7 @@ async function foo() {
 
 <template>
   <div class="home">
+    <van-button type="default" @click="$router.push('/demo')">去demo</van-button>
     <van-tag type="primary" @click="foo">标签</van-tag>
     <van-button type="primary" text="组件调用" @click="showNotifyFn" />
     <van-notify v-model:show="show" type="success">

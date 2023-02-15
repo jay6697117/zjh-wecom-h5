@@ -4,11 +4,15 @@ import { computed } from 'vue'
 const cachedViewList = computed(() => {
   return useCachedViewStoreHook().cachedViewList
 })
+const onClickLeft = () => history.go(-1)
 </script>
+
 <template>
   <div class="app-wrapper">
-    <div class="app-wrapper__content">
-      <!-- <router-view v-slot="{ Component, route }"> -->
+    <div class="app-wrapper__header" v-if="$route.path !== '/home'">
+      <van-nav-bar :title="`${$route.meta?.title}`" left-arrow @click="onClickLeft" />
+    </div>
+    <div class="app-wrapper__content" :style="{ 'padding-top': $route.path !== '/home' ? '46px' : '' }">
       <router-view v-slot="{ Component }">
         <keep-alive :include="cachedViewList">
           <component :is="Component" />
@@ -23,12 +27,25 @@ const cachedViewList = computed(() => {
 
 <style lang="less" scoped>
 @import '@/styles/mixin.less';
+::v-deep .van-nav-bar__left {
+  padding: 0 0 0 10px;
+}
 
 .app-wrapper {
   .clearfix();
   position: relative;
   width: 100%;
   height: 100%;
+
+  &__header {
+    width: 100%;
+    height: 46px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
 
   &__content {
     box-sizing: border-box;
@@ -40,10 +57,9 @@ const cachedViewList = computed(() => {
   }
 
   &__footer {
-    background-color: red;
     width: 100%;
     height: 50px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;

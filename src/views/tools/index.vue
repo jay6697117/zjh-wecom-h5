@@ -82,10 +82,11 @@ const handleErrorReq = () => {
 
   &__desc {
     font-size: 14px;
-    padding: 2px 10px;
+    padding: 10px;
     border-radius: 4px;
     background-color: #eee;
-    margin-top: 14px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -102,8 +103,9 @@ const handleErrorReq = () => {
       align-items: center;
 
       img {
-        width: 80%;
-        height: 100%;
+        display: block;
+        width: 130px;
+        height: 150px;
       }
     }
   }
