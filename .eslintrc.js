@@ -25,12 +25,8 @@ module.exports = {
   parser: 'vue-eslint-parser',
   // 0 = off, 1 = warn, 2 = error
   rules: {
-    'vue/multi-word-component-names': [
-      'error',
-      {
-        ignores: ['index'] // 需要忽略的组件名
-      }
-    ],
+    '@typescript-eslint/no-unused-vars':'off',
+    'vue/multi-word-component-names': 'off',
     "vue/no-v-model-argument": 'off',
     'vue/require-default-prop':'off',
     'vue/attributes-order':'off',

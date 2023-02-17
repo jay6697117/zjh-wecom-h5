@@ -37,9 +37,11 @@ const foo = async () => {
 
 <template>
   <div class="home">
-    <van-button type="default" @click="$router.push('/demo')">去demo</van-button>
-    <van-tag type="primary" @click="foo">标签</van-tag>
-    <van-button type="primary" text="组件调用" @click="showNotifyFn" />
+    <div class="home-item"><van-button type="default" @click="$router.push('/demo')">去demo</van-button></div>
+    <van-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 10px' }" dashed>文字</van-divider>
+    <div class="home-item"><van-tag type="primary" @click="foo">标签</van-tag></div>
+    <van-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 10px' }" dashed>文字</van-divider>
+    <div class="home-item"><van-button type="primary" text="组件调用" @click="showNotifyFn" /></div>
     <van-notify v-model:show="show" type="success">
       <van-icon name="bell" style="margin-right: 4px" />
       <span>通知内容</span>
@@ -52,10 +54,17 @@ const foo = async () => {
   position: relative;
   height: 100%;
   width: 100%;
-  background-color: lightblue;
+  // background-color: lightblue;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: stretch;
+
+  .home-item {
+    display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  }
 }
 </style>
