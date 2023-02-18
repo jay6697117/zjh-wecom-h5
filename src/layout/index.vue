@@ -23,7 +23,7 @@ const onClickLeft = () => history.go(-1)
         </keep-alive>
       </router-view>
     </div>
-    <div class="app-wrapper__footer" v-if="true">
+    <div class="app-wrapper__footer" v-if="!$route.meta?.noTabbar">
       <tabbar />
     </div>
   </div>

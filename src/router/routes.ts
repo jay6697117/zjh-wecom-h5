@@ -7,7 +7,8 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'Root',
     component: Layout,
-    redirect: '/home',
+    // redirect: '/home',
+    redirect: '/base',
     children: [
       {
         path: 'home',
@@ -47,6 +48,17 @@ const routes: Array<RouteRecordRaw> = [
           title: '关于',
           noCache: true,
           noNav: false
+        }
+      },
+      {
+        path: 'base',
+        name: 'Base',
+        component: () => import('@/views/base/index.vue'),
+        meta: {
+          title: '基础',
+          noCache: true,
+          noNav: true,
+          noTabbar: true
         }
       }
     ]
