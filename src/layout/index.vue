@@ -16,7 +16,13 @@ const onClickLeft = () => history.go(-1)
         </template>
       </van-nav-bar>
     </div>
-    <div class="app-wrapper__content" :style="{ 'padding-top': !$route.meta?.noNav ? '46px' : '' }">
+    <div
+      class="app-wrapper__content"
+      :style="{
+        'padding-top': !$route.meta?.noNav ? '46px' : '',
+        'padding-bottom': !$route.meta?.noTabbar ? '50px' : ''
+      }"
+    >
       <router-view v-slot="{ Component }">
         <keep-alive :include="cachedViewList">
           <component :is="Component" />
@@ -56,7 +62,6 @@ const onClickLeft = () => history.go(-1)
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    padding-bottom: 50px;
     overflow-x: hidden;
     overflow-y: auto;
   }

@@ -40,7 +40,8 @@ const contentList = reactive([
 
 <style lang="less" scoped>
 .demo-content {
-  padding: 0 12px 10px;
+  // padding: 0 12px 10px;
+  padding: 0 24px 20px;
   background-color: rgba(0, 0, 255, 0.5);
 
   .logo {
@@ -75,14 +76,20 @@ const contentList = reactive([
   }
 
   &__desc {
-    font-size: 14px;
-    padding: 2px 10px;
-    border-radius: 4px;
+    // font-size: 14px;
+    // padding: 2px 10px;
+    // border-radius: 4px;
+    // background-color: #eee;
+    // margin-top: 14px;
+
+    font-size: 28px;
+    padding: 4px 20px;
+    border-radius: 8px;
     background-color: #eee;
-    margin-top: 14px;
+    margin-top: 28px;
 
     p {
-      line-height: 24px;
+      line-height: 48px;
     }
   }
 }

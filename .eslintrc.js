@@ -25,6 +25,7 @@ module.exports = {
   parser: 'vue-eslint-parser',
   // 0 = off, 1 = warn, 2 = error
   rules: {
+    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars':'off',
     'vue/multi-word-component-names': 'off',
     "vue/no-v-model-argument": 'off',
