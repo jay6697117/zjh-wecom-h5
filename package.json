@@ -6,7 +6,9 @@
     "node": ">= 16"
   },
   "scripts": {
-    "dev": "run-p lint && vite --open --host --port=8000 --mode development",
+    "serve": "run-s rm-type-declare lint dev",
+    "rm-type-declare": "rm -rf src/components.d.ts",
+    "dev": "vite --open --host --port=8000 --mode development",
     "preview": "vite preview",
     "build:dev": "vite build --mode dev",
     "build:test": "vite build --mode test",

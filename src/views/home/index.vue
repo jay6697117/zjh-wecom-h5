@@ -62,9 +62,9 @@ const foo = async () => {
 
   .home-item {
     display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
