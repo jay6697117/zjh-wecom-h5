@@ -1,5 +1,7 @@
 <script setup lang="ts" name="Base">
 import { ref, onMounted, reactive } from 'vue'
+import type DialogExpose from '@/components/DialogExpose/index.vue'
+
 const msg = ref('111')
 const changeMsg = (val: string): void => {
   msg.value = val
@@ -7,24 +9,23 @@ const changeMsg = (val: string): void => {
 const handleInput = (e: any) => {
   msg.value = e.target.value
 }
-const exposeRef = ref(null)
 
+const exposeRef = ref<InstanceType<typeof DialogExpose> | null>(null)
 let msgExpose = ref('')
 let changeMsgExpose: (val: string) => void = (val: string): void => {}
 
 onMounted(() => {
   console.log('onMounted', exposeRef.value)
-  const { msg, changeMsg } = exposeRef.value as any
-  console.log('onMounted msg:', msg)
-  console.log('onMounted msg:', changeMsg)
-  msgExpose.value = msg
-  changeMsgExpose = changeMsg
-  // setTimeout(() => {
-  //   console.log('onMounted msg:', msg)
-  //   console.log('onMounted msg:', changeMsg)
-  //   msgExpose.value = msg;
-  //   changeMsgExpose = changeMsg;
-  // }, 2000)
+  // const { msg, changeMsg } = exposeRef.value as any
+  // console.log('onMounted msg:', msg)
+  // console.log('onMounted changeMsg:', changeMsg)
+  // msgExpose.value = msg
+  // changeMsgExpose = changeMsg
+  msgExpose.value = exposeRef.value!.msg
+  changeMsgExpose = exposeRef.value!.changeMsg
+  console.log('onMounted msgExpose:', msgExpose)
+  console.log('onMounted changeMsgExpose:', changeMsgExpose)
+
 })
 </script>
 
