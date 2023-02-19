@@ -27,6 +27,9 @@ onMounted(() => {
 <template>
   <div class="base">
     <input type="text" :value="msg" @input="handleInput" />
+    <!-- <Teleport to="#app">
+      <dialog-props-emits :msg="msg" @change-msg="changeMsg" />
+    </Teleport> -->
     <dialog-props-emits :msg="msg" @change-msg="changeMsg" />
     <dialog-expose ref="exposeRef" />
     <button @click="changeMsgExpose('父组件 changeMsgExpose')">changeMsgExpose</button>

@@ -1,7 +1,10 @@
 <script setup lang="ts" name="Home">
-import { ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 import { showToast } from 'vant'
 import 'vant/es/toast/style'
+import { useRoute, useRouter } from 'vue-router'
+const route = useRoute()
+const router = useRouter()
 
 const wx = (window as any).wx
 const show = ref(false)
@@ -33,11 +36,26 @@ const foo = async () => {
     }
   })
 }
+
+console.log('route.query.id home:', route.query.id)
+
+const goBase = () => {
+  router.push({
+    path: '/base',
+    query: {
+      id: route.query.id
+    }
+  })
+}
+
+// onBeforeMount(()=>{
+//   console.log('route.query.id home:', route.query.id)
+// })
 </script>
 
 <template>
   <div class="home">
-    <div class="home-item"><van-button type="default" @click="$router.push('/base')">去base</van-button></div>
+    <div class="home-item"><van-button type="default" @click="goBase">去base</van-button></div>
     <van-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 10px' }" dashed>文字</van-divider>
     <div class="home-item"><van-button type="default" @click="$router.push('/demo')">去demo</van-button></div>
     <van-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 10px' }" dashed>文字</van-divider>

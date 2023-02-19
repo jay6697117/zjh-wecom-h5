@@ -16,10 +16,17 @@ const changeMsg = () => {
 </script>
 
 <template>
-  <div style="background-color: #eee;">
-    <h1>{{props.msg}}</h1>
+  <div class="dialog">
+    <h1>{{ props.msg }}</h1>
     <button @click="changeMsg">改变msg</button>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.dialog {
+  background-color: #eee;
+  border: 5px solid red;
+  margin: 20px 0;
+  padding: 10px;
+}
+</style>
