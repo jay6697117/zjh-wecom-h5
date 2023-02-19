@@ -9,18 +9,22 @@ const handleInput = (e: any) => {
 }
 const exposeRef = ref(null)
 
-let msgExpose =ref('')
+let msgExpose = ref('')
 let changeMsgExpose: (val: string) => void = (val: string): void => {}
 
 onMounted(() => {
   console.log('onMounted', exposeRef.value)
   const { msg, changeMsg } = exposeRef.value as any
-  setTimeout(() => {
-    console.log('onMounted msg:', msg)
-    console.log('onMounted msg:', changeMsg)
-    msgExpose.value = msg;
-    changeMsgExpose = changeMsg;
-  }, 2000)
+  console.log('onMounted msg:', msg)
+  console.log('onMounted msg:', changeMsg)
+  msgExpose.value = msg
+  changeMsgExpose = changeMsg
+  // setTimeout(() => {
+  //   console.log('onMounted msg:', msg)
+  //   console.log('onMounted msg:', changeMsg)
+  //   msgExpose.value = msg;
+  //   changeMsgExpose = changeMsg;
+  // }, 2000)
 })
 </script>
 
