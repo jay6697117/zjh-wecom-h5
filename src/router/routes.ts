@@ -56,7 +56,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/base/index.vue'),
         meta: {
           title: '基础',
-          noCache: true,
+          noCache: false,
           noNav: true,
           noTabbar: true
         }

@@ -1,14 +1,10 @@
-<script setup lang="ts" name="Base"></script>
+<script setup lang="ts" name="Base">
+
+</script>
 
 <template>
   <div class="base">
-    <div class="header"></div>
-    <div class="content">
-      <span
-        >我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;我是10px字体;</span
-      >
-    </div>
-    <div class="footer"></div>
+1
   </div>
 </template>
 
@@ -19,32 +15,9 @@
   overflow-x: hidden;
   overflow-y: auto;
   padding: 20px 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-
-  .header {
-    margin-bottom: 10px;
-    background-color: lightseagreen;
-    height: 100px;
-  }
-  .content {
-    // font-size: 20px;
-    font-size: 10px;
-    padding: 20px;
-    text-align: justify;
-    // height: calc(100% - 200px);
-    flex: 1;
-    overflow-x: hidden;
-    overflow-y: auto;
-    margin-bottom: 10px;
-    background-color: lightblue;
-  }
-
-  .footer {
-    background-color: gray;
-    height: 100px;
-  }
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
+  // align-items: stretch;
 }
 </style>

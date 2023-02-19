@@ -23,6 +23,7 @@ const onClickLeft = () => history.go(-1)
         'padding-bottom': !$route.meta?.noTabbar ? '50px' : ''
       }"
     >
+      <div>cachedViewList:{{ cachedViewList }}</div>
       <router-view v-slot="{ Component }">
         <keep-alive :include="cachedViewList">
           <component :is="Component" />

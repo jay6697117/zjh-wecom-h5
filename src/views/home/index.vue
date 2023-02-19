@@ -37,6 +37,8 @@ const foo = async () => {
 
 <template>
   <div class="home">
+    <div class="home-item"><van-button type="default" @click="$router.push('/base')">去base</van-button></div>
+    <van-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 10px' }" dashed>文字</van-divider>
     <div class="home-item"><van-button type="default" @click="$router.push('/demo')">去demo</van-button></div>
     <van-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 10px' }" dashed>文字</van-divider>
     <div class="home-item"><van-tag type="primary" @click="foo">标签</van-tag></div>
