@@ -37,8 +37,8 @@ onActivated(() => {
 onDeactivated(() => {
   console.log('kee-alive隐藏本组件')
 })
-onErrorCaptured((err) => {
-  console.log('错误捕获:',err)
+onErrorCaptured(err => {
+  console.log('错误捕获:', err)
 })
 
 const throwError = () => {

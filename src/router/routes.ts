@@ -8,10 +8,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Root',
     component: Layout,
     // redirect: '/home',
-    redirect: '/base',
+    // redirect: '/base',
+    redirect: '/ts',
     children: [
       {
-        path: 'home',
+        path: '/home',
         name: 'Home',
         component: Home,
         meta: {
@@ -21,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
-        path: 'demo',
+        path: '/demo',
         name: 'Demo',
         component: () => import('@/views/demo/index.vue'),
         meta: {
@@ -31,7 +32,7 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
-        path: 'tools',
+        path: '/tools',
         name: 'Tools',
         component: () => import('@/views/tools/index.vue'),
         meta: {
@@ -41,7 +42,7 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
-        path: 'about',
+        path: '/about',
         name: 'About',
         component: () => import('@/views/about/index.vue'),
         meta: {
@@ -51,11 +52,22 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
-        path: 'base',
+        path: '/base',
         name: 'Base',
         component: () => import('@/views/base/index.vue'),
         meta: {
           title: '基础',
+          noCache: false,
+          noNav: true,
+          noTabbar: true
+        }
+      },
+      {
+        path: '/ts',
+        name: 'Ts',
+        component: () => import('@/views/ts/index.vue'),
+        meta: {
+          title: 'Ts',
           noCache: false,
           noNav: true,
           noTabbar: true

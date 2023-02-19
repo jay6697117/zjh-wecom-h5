@@ -114,7 +114,7 @@ const changeUserInfo = () => {
 // 不需要说明监听谁
 // 用到user.gender就监听user.gender
 watchEffect(() => {
-  console.log('user被修改了:', user.name,'--',user.gender)
+  console.log('user被修改了:', user.name, '--', user.gender)
 })
 
 /* computed & watch & watchEffect */
