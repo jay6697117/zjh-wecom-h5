@@ -80,6 +80,8 @@ const handleInputChange = (event: Event) => {
     alt="1"
   />
   <input type="text" @change="handleInputChange" />
+  <br /><br />
+  <DateComp title="我是弹窗" content="今天心情特别好今天心情特别好今天心情特别好今天心情特别好今天心情特别好今天心情特别好" />
 </template>
 
 <style lang="less" scoped>
