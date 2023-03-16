@@ -1,5 +1,7 @@
 <script setup lang="ts" name="Ts">
 import { reactive, ref, computed, defineProps, defineEmits, onMounted } from 'vue'
+import VirtualList from '../vl/index.vue'
+// import { nanoid } from 'nanoid'
 
 interface IUser {
   name: string
@@ -65,10 +67,17 @@ onMounted(() => {
 const handleInputChange = (event: Event) => {
   console.log('handleInputChange:', (event.target as HTMLInputElement).value)
 }
+
+const items: number[] = []
+
+for (let index = 0; index < 10000000; index++) {
+  items.push(index)
+}
+console.log('items', items)
 </script>
 
 <template>
-  <div>{{ variant }}</div>
+  <!-- <div>{{ variant }}</div>
   <div>{{ user }}</div>
   <div>{{ user1 }}</div>
   <div>{{ user2 }}</div>
@@ -81,14 +90,20 @@ const handleInputChange = (event: Event) => {
   />
   <input type="text" @change="handleInputChange" />
   <br /><br />
-  <DateComp title="我是弹窗" content="今天心情特别好今天心情特别好今天心情特别好今天心情特别好今天心情特别好今天心情特别好" />
+  <DateComp
+    title="我是弹窗"
+    content="今天心情特别好今天心情特别好今天心情特别好今天心情特别好今天心情特别好今天心情特别好"
+  /> -->
+
+  <div class="aaa">
+    <virtual-list :itemHeight="30" :items="items" :height="301" />
+  </div>
 </template>
 
 <style lang="less" scoped>
-div {
-  font-size: 20px;
+.aaa {
+  font-size: 16px;
   padding: 10px;
-  margin-top: 10px;
-  background-color: #ccc;
+  background-color: #eee;
 }
 </style>

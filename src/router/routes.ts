@@ -10,6 +10,7 @@ const routes: Array<RouteRecordRaw> = [
     // redirect: '/home',
     // redirect: '/base',
     redirect: '/ts',
+    // redirect: '/vl',
     children: [
       {
         path: '/home',
@@ -68,6 +69,17 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/ts/index.vue'),
         meta: {
           title: 'Ts',
+          noCache: false,
+          noNav: true,
+          noTabbar: true
+        }
+      },
+      {
+        path: '/vl',
+        name: 'Vl',
+        component: () => import('@/views/vl/index.vue'),
+        meta: {
+          title: 'Vl',
           noCache: false,
           noNav: true,
           noTabbar: true
