@@ -8,8 +8,8 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Root',
     component: Layout,
     // redirect: '/home',
-    // redirect: '/base',
-    redirect: '/ts',
+    redirect: '/base',
+    // redirect: '/ts',
     // redirect: '/vl',
     children: [
       {
