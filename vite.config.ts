@@ -53,9 +53,7 @@ export default defineConfig(({ mode }) => {
       // 注入模板数据
       createHtmlPlugin({
         inject: {
-          data: {
-            ENABLE_ERUDA: env.VITE_ENABLE_ERUDA || 'false'
-          }
+          data: {}
         }
       })
     ],
@@ -75,7 +73,7 @@ export default defineConfig(({ mode }) => {
         },
         '^/mock-api': {
           target: '',
-          changeOrigin: true,
+          changeOrigin: true
         }
       }
     },
