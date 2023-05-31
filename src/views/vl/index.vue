@@ -68,7 +68,7 @@ onMounted(() => {
 })
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .virtual-list {
   overflow-y: auto;
   position: relative;
