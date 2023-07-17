@@ -13,6 +13,6 @@ import router from './router'
 const app = createApp(App)
 app.use(store)
 app.use(router)
-app.config.globalProperties.name = '沐华'
+app.config.globalProperties.name = '沐华666'
 
 app.mount('#app')
