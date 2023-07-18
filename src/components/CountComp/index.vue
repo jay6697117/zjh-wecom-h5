@@ -1,6 +1,6 @@
 <template>
   <div class="count-comp">
-    <div>{{ count }}</div>
+    <div style="margin-bottom: 10px;background-color: #f1f1f1;padding: 4px;width:40px;border-radius: 4px;">{{ count }}</div>
     <van-button size="small" type="default" @click="handleAdd">Add</van-button>&nbsp;
     <van-button size="small" type="default" @click="handleSub">Sub</van-button>
   </div>
