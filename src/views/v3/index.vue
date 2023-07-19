@@ -1,92 +1,38 @@
-<template>
-  <div class="container">
-    <h1>111</h1>
-  </div>
-</template>
+<script setup>
+import { watch, ref, reactive } from 'vue'
 
-<script lang="ts" setup>
-import {
-  ref,
-  reactive,
-  computed,
-  onBeforeMount,
-  onMounted,
-  defineProps,
-  getCurrentInstance,
-  nextTick,
-  watch,
-  toRaw,
-  type ComponentInternalInstance
-} from 'vue'
-import { showLoadingToast } from 'vant'
-
-const p1 = () => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({ msg: '请求成功', data: [1, 2, 3], code: 200 })
-    }, 2000)
-  })
-}
-
-const getData = async () => {
-  const toastInst = showLoadingToast({
-    duration: 0,
-    forbidClick: false,
-    message: '加载中',
-    loadingType: 'spinner',
-    className: 'loading-toast',
-    teleport: document.getElementsByClassName('container')[0]
-  })
-  try {
-    const res = await p1()
-    console.log('res',Date.now(), res)
-    toastInst.close()
-  } catch (error) {
-    toastInst.close()
-    console.log('error', error)
-  }
-}
-
-onBeforeMount(() => {
-  console.log('onBeforeMount run');
-  getData()
+const name = ref('沐华')
+const data = reactive({
+  age: 18,
+  money: 100000000000000000000,
+  children: []
 })
-onMounted(() => {
-  console.log('onMounted run');
-  getData()
+
+// 监听 ref 属性
+watch(name, (newName, oldName) => {})
+
+// 监听其他属性、路由或者状态管理的都这样
+watch(
+  () => data.age,
+  (newAge, oldAge) => {}
+)
+
+// 监听多个属性，数组放多个值，返回的新值和老值也是数组形式
+watch([data.age, data.money], ([newAge, newMoney], [oldAge, oldMoney]) => {})
+
+// 第三个参数是一个对象，为可配置项，有5个可配置属性
+watch(data.children, (newList, oldList) => {}, {
+  // 这两个和 Vue2 一样，没啥说的
+  immediate: true,
+  deep: true,
+  // 回调函数的执行时机，默认在组件更新之前调用。更新后调用改成post
+  flush: 'pre', // 默认值是 pre，可改成 post 或 sync
+  // 下面两个是调试用的
+  onTrack(e) {
+    debugger
+  },
+  onTrigger(e) {
+    debugger
+  }
 })
 </script>
-
-
-<style lang="less">
-.loading-toast.van-popup {
-  box-sizing: border-box;
-  max-width: 375px;
-  max-height: 375px;
-  width: 335px;
-  height: 335px;
-}
-
-.loading-toast {
-  .van-loading__spinner {
-    color: red;
-    width: 60px;
-    height: 60px;
-  }
-
-  .van-toast__text {
-    color: red;
-    font-size: 80px;
-    height: 100px;
-    line-height: 100px;
-  }
-}
-</style>
-
-<style lang="less" scoped>
-.container {
-  width: 375px;
-  padding: 15px 10px;
-  background-color: #ccc;
-}
-</style>
