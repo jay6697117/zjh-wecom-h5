@@ -16,11 +16,10 @@ import {
   toRaw
 } from 'vue'
 
-
 const count = ref(111)
 // 有人这么用
 const arr = ref([])
-console.log('arr.value', arr.value,) // []
+console.log('arr.value', arr.value) // []
 console.log('toRaw(arr.value)', toRaw(arr.value))
 
 // 也有人这么用，一个组件里所有的属性全部定义在一个对象里，有点 Vue2 data 的味道

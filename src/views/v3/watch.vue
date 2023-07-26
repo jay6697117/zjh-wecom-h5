@@ -40,11 +40,11 @@ watch(
 // 第三个参数是一个对象，为可配置项，有5个可配置属性
 watch(
   data.children,
-  (newList, oldList,onInvalidate) => {
+  (newList, oldList, onInvalidate) => {
     // console.log('children newList 4', newList)
     console.log('children toRaw(newList) 4:', toRaw(newList), toRaw(newList).length)
-    onInvalidate(()=>{
-      console.log('onInvalidate run');
+    onInvalidate(() => {
+      console.log('onInvalidate run')
     })
   },
   {
@@ -69,7 +69,6 @@ name.value = '沐华-666'
 data.age = 777
 data.money = 30000
 data.children.push(1)
-
 </script>
 
 <template>

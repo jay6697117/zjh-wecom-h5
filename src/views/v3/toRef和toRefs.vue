@@ -29,23 +29,21 @@ console.log('age', age)
 // 不管是 toRef 还是 toRefs，这样修改是会把 data 里的 name 改掉的
 // 就是会改变源对象属性，这才是响应式该有的样子
 const toastInst = showLoadingToast({
-    duration: 0,
-    forbidClick: false,
-    message: '加载中',
-    loadingType: 'spinner',
-    className: 'loading-toast',
-  })
+  duration: 0,
+  forbidClick: false,
+  message: '加载中',
+  loadingType: 'spinner',
+  className: 'loading-toast'
+})
 setTimeout(() => {
   name.value = '沐沐-666'
   age.value = '777'
-  toastInst.close();
+  toastInst.close()
 }, 3000)
-
 </script>
 <template>
   <div>{{ data }}</div>
 </template>
-
 
 <style lang="less">
 .loading-toast.van-popup {

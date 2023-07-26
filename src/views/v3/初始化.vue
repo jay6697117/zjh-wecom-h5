@@ -39,7 +39,7 @@ const getData = async () => {
   })
   try {
     const res = await p1()
-    console.log('res',Date.now(), res)
+    console.log('res', Date.now(), res)
     toastInst.close()
   } catch (error) {
     toastInst.close()
@@ -48,15 +48,14 @@ const getData = async () => {
 }
 
 onBeforeMount(() => {
-  console.log('onBeforeMount run');
+  console.log('onBeforeMount run')
   getData()
 })
 onMounted(() => {
-  console.log('onMounted run');
+  console.log('onMounted run')
   getData()
 })
 </script>
-
 
 <style lang="less">
 .loading-toast.van-popup {
