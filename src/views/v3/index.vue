@@ -1,15 +1,22 @@
-<script lang="ts" setup>
+<script setup>
 import { ref } from 'vue'
-import Child from './Child/index.vue'
-
-const name = ref('沐华')
-const age = ref(18)
+const str = ref('blue') // 蓝色
+// let str = 'blue'
+setTimeout(() => {
+  // str = 'purple' // 非响应式数据不可以动态改变
+  str.value = 'purple' // 响应式数据可以动态改变
+}, 2000)
 </script>
 
 <template>
-  <h1>name: {{ name }}</h1>
-  <h1>age: {{ age }}</h1>
-  <Child v-model:name="name" v-model:age="age" />
+  <div class="name">沐华</div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.name {
+  font-size: 30px;
+  color: red;
+  padding: 20px;
+  background-color: v-bind(str); // JS 中的色值变量 #f00 就赋值到这来了
+}
+</style>
