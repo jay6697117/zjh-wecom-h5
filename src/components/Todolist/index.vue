@@ -52,7 +52,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { onBeforeUnmount } from 'vue'
 import useTodos from '@/hooks/useTodos'
 const {
@@ -75,7 +75,7 @@ const {
 onBeforeUnmount(() => {
   console.log('onBeforeUnmount timer.value 1:', timer.value)
   //清除定时器
-  clearTimeout(timer)
+  clearTimeout(timer as any)
   timer.value = null
   console.log('onBeforeUnmount timer.value 2:', timer.value)
 })
@@ -83,6 +83,10 @@ onBeforeUnmount(() => {
 
 <style lang="less" scoped>
 .todos {
+  background-color: #eee;
+  height: 100%;
+  padding: 10px;
+
   .modal-wrap {
     position: fixed;
     top: 150px;
