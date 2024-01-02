@@ -11,7 +11,8 @@ const routes: Array<RouteRecordRaw> = [
     // redirect: '/base',
     // redirect: '/ts',
     // redirect: '/vl',
-    redirect: '/v3',
+    // redirect: '/v3',
+    redirect: '/about',
     children: [
       {
         path: '/home',
